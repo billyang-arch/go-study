@@ -9,7 +9,7 @@ import (
 
 // TestShouldUpdateStats sql执行成功的测试用例
 func TestShouldUpdateStats(t *testing.T) {
-	// mock一个*sql.DB对象，不需要连接真实的数据库
+	// mock一个*sql_demo.DB对象，不需要连接真实的数据库
 	db, mock, err := sqlmock.New()
 	if err != nil {
 		t.Fatalf("an error '%s' was not expected when opening a stub database connection", err)
