@@ -1,0 +1,13 @@
+// demo/proto/author/author.proto
+
+syntax = "proto3";
+
+// 声明protobuf中的包名
+package author11;
+
+// 声明生成的Go代码的导入路径
+option go_package = "go-study/microservice/protobuf_demo/author";
+
+message Info {
+  string name = 1;
+}

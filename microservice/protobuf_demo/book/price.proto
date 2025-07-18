@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package book;
+
+option go_package = "go-study/microservice/protobuf_demo/book"; // 指定生成文件的路径
+
+message Price {
+  int64 market_price = 1;  // 建议使用下划线的命名方式
+  int64 sale_price = 2;
+}
+
+//protoc --proto_path=microservice/protobuf_demo --go_out=microservice/protobuf_demo --go_opt=paths=source_relative  book/price.proto
+
+//--proto_path=microservice/protobuf_demo 表示从proto目录下读取proto文件。
+//--go_out=microservice/protobuf_demo/pb 表示生成的Go代码保存的路径。
+//--go_opt=paths=source_relative 表示输出文件与输入文件放在相同的相对目录中。
+//price.proto 表示在microservice/protobuf_demo目录下的price.proto文件。
