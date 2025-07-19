@@ -2,7 +2,7 @@ package databasetest_demo
 
 import (
 	"context"
-	"github.com/go-redis/redis/v8" // 注意导入版本
+	"github.com/redis/go-redis/v9" // 注意导入版本
 	"strings"
 	"time"
 )
