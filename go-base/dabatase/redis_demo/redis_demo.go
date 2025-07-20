@@ -2,10 +2,18 @@ package main
 
 import (
 	"context"
+	_ "embed"
 	"fmt"
 	"github.com/redis/go-redis/v9"
 	"time"
 )
+
+// embed 特别适合用于嵌入模板文件（HTML）、静态资源（JS, CSS）、配置文件以及我们今天的主角——SQL 或 Lua 脚本文件。
+// 这使得我们的应用程序可以打包成一个独立的二进制文件，无需在部署时携带一堆零散的静态资源文件。
+// 编译的时候直接把文件内容嵌入到二进制文件中，然后通过特殊注释的方式告诉 Go 编译器去执行这个特殊注释。
+//
+//go:embed scripts/limiter.lua
+var limiterScriptSource string // lua 脚本内容将被加载到这个字符串变量中
 
 func main() {
 	rdb := redis.NewClient(&redis.Options{
@@ -33,7 +41,13 @@ func main() {
 	pipeline_demo1(rdb)
 	pipeline_demo2(rdb)
 	fmt.Println("-----------------------------")
-	watch_demo1(rdb)
+	//watch_demo1(rdb)
+	//lua demo
+	lua_demo(rdb)
+	fmt.Println("-----------------------------")
+	lua_demo2(rdb)
+	fmt.Println("-----------------------------")
+	lua_demo3(rdb, redis.NewScript(limiterScriptSource))
 }
 
 // doCommand go-redis基本使用示例
