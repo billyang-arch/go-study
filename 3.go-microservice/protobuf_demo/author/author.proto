@@ -6,7 +6,7 @@ syntax = "proto3";
 package author11;
 
 // 声明生成的Go代码的导入路径
-option go_package = "go-study/go-microservice/protobuf_demo/author";
+option go_package = "go-study/3.go-microservice/protobuf_demo/author";
 
 message Info {
   string name = 1;

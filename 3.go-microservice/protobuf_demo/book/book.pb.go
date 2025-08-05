@@ -9,7 +9,7 @@
 package book
 
 import (
-	author "go-study/go-microservice/protobuf_demo/author"
+	author "go-study/3.go-microservice/protobuf_demo/author"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	timestamppb "google.golang.org/protobuf/types/known/timestamppb"

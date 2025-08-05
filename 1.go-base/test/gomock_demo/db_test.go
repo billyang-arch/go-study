@@ -1,7 +1,7 @@
 package gomock_demo
 
 import (
-	"go-study/go-base/test/gomock_demo/mocks"
+	"go-study/1.go-base/test/gomock_demo/mocks"
 	"go.uber.org/mock/gomock"
 	"testing"
 )

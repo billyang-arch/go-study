@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package book;
 
-option go_package = "go-study/go-microservice/protobuf_demo/book"; // 指定生成文件的路径
+option go_package = "go-study/3.go-microservice/protobuf_demo/book"; // 指定生成文件的路径
 
 message Price {
   int64 market_price = 1;  // 建议使用下划线的命名方式

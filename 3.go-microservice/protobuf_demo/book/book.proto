@@ -5,7 +5,7 @@ syntax = "proto3";
 package book;
 
 // 声明生成的Go代码的导入路径
-option go_package = "go-study/go-microservice/protobuf_demo/book"; // 指定生成文件的路径
+option go_package = "go-study/3.go-microservice/protobuf_demo/book"; // 指定生成文件的路径
 
 // 引入同目录下的protobuf文件（注意起始位置为proto_path的下层）
 import "book/price.proto";
